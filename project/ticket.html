@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./img/planets-512.webp" rel="shortcut icon" type="image/x-icon">
+  <title>Ticket</title>
+</head>
+<style>
+  body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  img {
+    width: 1010px;
+    padding: 1rem;
+  }
+  p{
+    position: absolute;
+    color: #5a608a;
+    font-size: large;
+    font-family: monospace;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100px;
+    top: 5rem;
+    left: 45.4rem;
+  }
+</style>
+<body>
+  <p id="comment-text"></p><p id="comment-text1" style="color: #c4c6d4;top: 27.5rem;"></p> 
+  <img src="./img/Blue Modern Boarding Pass Airlines Ticket conv 1.png" alt="">
+  <img src="./img/Blue Modern Boarding Pass Airlines Ticket conv 2.png" alt="">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script>
+    window.print();
+    // localStorage.setItem('name', 'Anastasiia Kravchenko');
+    const commentText = document.getElementById('comment-text');
+    const commentText1 = document.getElementById('comment-text1');
+    if (localStorage.getItem('name')) {
+      commentText.innerHTML = `<strong>${localStorage.getItem('name')}</strong>`;
+      commentText1.innerHTML = `<strong>${localStorage.getItem('name')}</strong>`;
+    }
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script>
+  $(".button-86").click(function() {
+      $(location).attr('href', 'buyer.html');
+  });
+  </script>
+</body>
+</html>

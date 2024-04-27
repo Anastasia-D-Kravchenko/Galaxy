@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./img/planets-512.webp" rel="shortcut icon" type="image/x-icon">
+    <title>Road</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: color(a98-rgb 0.17 0.18 0.24);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.system {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+}
+
+.sun,
+.orbit,
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  border-radius: 50%;
+}
+
+.sun,
+.planet {
+  width: 2em;
+  height: 2em;
+  margin-top: -1em;
+  margin-left: -1em;
+}
+
+.sun {
+  font-size: 9em;
+  background: linear-gradient(to bottom, #F8E82F 0%, rgba(251, 65, 9, 1) 100%);
+  box-shadow: 0 0 60px rgba(255, 160, 60, .4);
+  transform: rotateX(0deg);
+  box-shadow: 0px 0px 20px 4px #fa901b;
+  z-index: 10;
+}
+
+.sun:hover{
+  box-shadow: 0px 0px 20px 15px #fa901b;
+}
+
+.orbit {
+  width: 30em;
+    height: 30em;
+    margin-top: -15em;
+    margin-left: -15em;
+  border: 1px solid rgba(255, 255, 255, .25);
+  animation: animOrbit 12s linear infinite;
+}
+
+.planet {
+  background-color: aliceblue;
+  left: 98%;
+  animation: animPlanet 12s linear infinite;
+  width: 3rem;
+    height: 3rem;
+    box-shadow: 0px 0px 14px 0px #ffffff;
+}
+
+.planet:hover{
+  box-shadow: 0px 0px 20px 5px #ffffff;
+}
+
+@keyframes animOrbit {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes animPlanet {
+  0% {
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+.change::before{
+  transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #61efff;
+    border-radius: 10px;
+}
+.change::after{
+  transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #3d17fb4a;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+</style>
+<body>
+  <button class="button-86" role="button">Back</button>
+    <div class="system">
+        <div class="sun" id="link1"></div>
+        <div class="orbit">
+          <div class="planet" id="link2"></div>
+        </div>
+      </div>
+      <button class='glowing-btn' onclick="localStorage.removeItem('linksClicked');"><span class='glowing-txt'>B<span class='faulty-letter'>U</span>Y</span></button>
+</body>
+<script>
+  const link1 = document.getElementById('link1');
+        const link2 = document.getElementById('link2');
+        const bottomButton = document.querySelector('.glowing-btn');
+        const deletus = document.querySelector('.system');
+        const linksClicked = localStorage.getItem('linksClicked') || '0';
+        let clickCount = parseInt(linksClicked);
+        updateButtonState();
+        link1.addEventListener('click', function() {
+            clickCount++;
+            localStorage.setItem('linksClicked', clickCount);
+            updateButtonState();
+        });
+        link2.addEventListener('click', function() {
+            clickCount++;
+            localStorage.setItem('linksClicked', clickCount);
+            updateButtonState();
+        });
+        function updateButtonState() {
+            if (clickCount >= 2) {
+                bottomButton.style.display = 'block';
+                deletus.style.display = 'none';
+                document.querySelector('.button-86').classList.add('change');
+            } else {
+                bottomButton.style.display = 'none';
+                deletus.style.display = 'block';
+                document.querySelector('.button-86').classList.remove('change');
+            }
+        }
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script>
+  $(".planet").click(function() {
+    $(location).attr('href', 'The Moon/moon.html');
+});
+$(".sun").click(function() {
+    $(location).attr('href', 'The Sun/sun.html');
+});
+$(".glowing-btn").click(function() {
+    $(location).attr('href', 'buy.html');
+});
+$(".button-86").click(function() {
+    $(location).attr('href', 'buyer.html');
+});
+</script>
+</html>

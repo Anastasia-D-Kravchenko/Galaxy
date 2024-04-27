@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Пример формы с запоминанием</title>
+</head>
+<body>
+    <h1>Форма</h1>
+
+    <form id="myForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Отправить</button>
+    </form>
+
+    <h2>Сохраненные данные</h2>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const tableBody = document.getElementById('data-table').getElementsByTagName('tbody')[0];
+
+        // Загрузка данных из LocalStorage при загрузке страницы
+        window.onload = function() {
+            loadFromLocalStorage();
+        };
+
+        // Сохранение данных в LocalStorage и отображение в таблице
+        function saveToTable(data) {
+            const row = tableBody.insertRow();
+            row.insertCell().textContent = data.name;
+            row.insertCell().textContent = data.email;
+        }
+
+        // Очистка таблицы перед добавлением новых данных
+        function clearTable() {
+            tableBody.innerHTML = ''; // Очищает все строки
+        }
+
+        // Загрузка данных из LocalStorage
+        function loadFromLocalStorage() {
+            const storedData = localStorage.getItem('formData');
+            if (storedData) {
+                const data = JSON.parse(storedData);
+                saveToTable(data);
+            }
+        }
+
+        // Сохранение данных в LocalStorage при отправке формы
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            clearTable(); // Очистка таблицы перед добавлением
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value
+            };
+
+            localStorage.setItem('formData', JSON.stringify(formData));
+            saveToTable(formData);
+            alert('Данные сохранены!');
+        });
+    </script>
+</body>
+</html>
