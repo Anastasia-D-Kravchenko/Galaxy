@@ -28,13 +28,18 @@
 <script>
 	const userAgent = navigator.userAgent;
 const isDesktop = /Windows|Mac|Linux/i.test(userAgent);
-
 if (isDesktop) {
   console.log("Computer");
 } else {
   console.log("Go out of here");
   $(location).attr('href', '../mars_jupiter_system.html');
-
+}
+const hasTouch = 'ontouchstart' in window || 'ontouchmove' in window || 'ontouchend' in window;
+if (hasTouch) {
+	console.log("Go out of here");
+  $(location).attr('href', '../mars_jupiter_system.html');
+} else {
+	console.log("Computer");
 }
 </script>
 </body>
