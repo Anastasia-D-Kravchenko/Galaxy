@@ -90,6 +90,7 @@
 	margin-top: 5px; 
 	cursor: pointer; 
 	letter-spacing: 1px; 
+	text-align: center;
 } 
 
 .container form .submit_btn:hover { 

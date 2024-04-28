@@ -139,24 +139,24 @@ body {
           <div class="mars" id="link2"></div>
         </div>
       </div>
-      <button class='glowing-btn' onclick="localStorage.removeItem('linksClicked');"><span class='glowing-txt'>B<span class='faulty-letter'>U</span>Y</span></button>
+      <button class='glowing-btn' onclick="localStorage.removeItem('linkClicked');"><span class='glowing-txt'>B<span class='faulty-letter'>U</span>Y</span></button>
 </body>
 <script>
   const link1 = document.getElementById('link1');
         const link2 = document.getElementById('link2');
         const bottomButton = document.querySelector('.glowing-btn');
         const deletus = document.querySelector('.system');
-        const linksClicked = localStorage.getItem('linksClicked') || '0';
-        let clickCount = parseInt(linksClicked);
+        const linkClicked = localStorage.getItem('linkClicked') || '0';
+        let clickCount = parseInt(linkClicked);
         updateButtonState();
         link1.addEventListener('click', function() {
             clickCount++;
-            localStorage.setItem('linksClicked', clickCount);
+            localStorage.setItem('linkClicked', clickCount);
             updateButtonState();
         });
         link2.addEventListener('click', function() {
             clickCount++;
-            localStorage.setItem('linksClicked', clickCount);
+            localStorage.setItem('linkClicked', clickCount);
             updateButtonState();
         });
         function updateButtonState() {
