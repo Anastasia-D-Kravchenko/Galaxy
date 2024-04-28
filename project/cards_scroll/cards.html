@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link href="../img/planets-512.webp" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+::-webkit-scrollbar {
+    width: 18px;
+    height: 10px;
+    background-color: #03022a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c57029;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background:
+        linear-gradient(300deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(60deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background:
+        linear-gradient(30deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+    background:
+        linear-gradient(210deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+}
+</style>
+<body>
+  <div id="targetContainer"></div>
+  <script>
+    function addFigureElement() {
+      for (let i = 1; i < 10; i++) {
+        const figureElement = document.createElement('figure');
+        const imageElement = document.createElement('img');
+        imageElement.src = './images/pic' + i + '.jpg';
+        imageElement.width = 1000;
+        imageElement.height = 1000;
+        const linkElement = document.createElement('a');
+        linkElement.href = '../buyer.html';
+        linkElement.appendChild(imageElement);
+        figureElement.appendChild(linkElement);
+        const targetContainer = document.getElementById('targetContainer');
+        targetContainer.appendChild(figureElement);
+      }
+    }
+    addFigureElement();
+  </script>
+</body>
+</html>
