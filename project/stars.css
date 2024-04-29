@@ -3713,8 +3713,8 @@ img {
     bottom: 0%;
     z-index: 2;
     background-image: url("./img/pic1.jpg");
-    opacity: 0.88;
-    filter: brightness(10%);
+    opacity: 0.7;
+    filter: brightness(20%);
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
