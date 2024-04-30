@@ -298,15 +298,16 @@ nameInput.addEventListener('input', function() {
 	</div> 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script>
-		const clicked = localStorage.getItem('clicked');
+		// const clicked = localStorage.getItem('clicked');
 		$(".submit_btn").click(function() {
-			$(location).attr('href', 'ticket.html');
-			localStorage.setItem('clicked', 'yes');
-		});
-		if(clicked === 'yes'){
-			localStorage.setItem('clicked', 'no');
+			window.open('ticket1.html', '_blank');
 			$(location).attr('href', 'buyer.html');
-		}
+			// localStorage.setItem('clicked', 'yes');
+		});
+		// if(clicked === 'yes'){
+		// 	localStorage.setItem('clicked', 'no');
+		// 	$(location).attr('href', 'buyer.html');
+		// }
 		</script>
 	<script>
         let cardNumInput = 
@@ -340,14 +341,7 @@ if (!hasVisited) {
 }else{
 	alert('Please enter your name before proceeding.');
 }
-    </script> 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-    <script>
-    $(".submit_btn").click(function() {
-        $(location).attr('href', 'ticket1.html');
-    });
     </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script>
     $(".button-86").click(function() {
         $(location).attr('href', 'mars_jupiter_system.html');
