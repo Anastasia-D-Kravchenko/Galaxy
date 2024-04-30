@@ -298,17 +298,16 @@ nameInput.addEventListener('input', function() {
 	</div> 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script>
-	location.replace();
-	const clicked = localStorage.getItem('clicked');
-    $(".submit_btn").click(function() {
-        $(location).attr('href', 'ticket.html');
-		localStorage.setItem('clicked', 'yes');
-    });
-	if(clicked === 'yes'){
-		$(location).attr('href', 'buyer.html');
-		localStorage.setItem('clicked', 'no');
-	}
-    </script>
+		const clicked = localStorage.getItem('clicked');
+		$(".submit_btn").click(function() {
+			$(location).attr('href', 'ticket.html');
+			localStorage.setItem('clicked', 'yes');
+		});
+		if(clicked === 'yes'){
+			localStorage.setItem('clicked', 'no');
+			$(location).attr('href', 'buyer.html');
+		}
+		</script>
 	<script>
         let cardNumInput = 
 	document.querySelector('#cardNum') 
