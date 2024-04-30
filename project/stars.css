@@ -3953,12 +3953,12 @@ img {
 }
 
 .risen-link {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-top: 1px solid #d89853;
     border-bottom: 1px solid #d89853;
     color: #fff;
-    font-size: 11px;
+    font-size: 17px;
     letter-spacing: 5px;
     text-decoration: none;
     text-transform: uppercase;
