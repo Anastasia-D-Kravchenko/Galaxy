@@ -28,7 +28,6 @@
         }
         body{
             background-image:url('./img/0d665c527a0229d484865cfd0b1567e4.jpg');
-            overflow: hidden;
         }
         .span-here, .span-is, .span-comma, .span-said{
             -webkit-text-stroke: 1px #9b490f !important;
@@ -79,5 +78,12 @@
     $(".risen-link").click(function() {
         $(location).attr('href', 'gallery/gallery.html');
     });
+
+const hasTouch = 'ontouchstart' in window || 'ontouchmove' in window || 'ontouchend' in window;
+if (hasTouch) {
+	document.body.style.overflow = 'auto';
+} else {
+	document.body.style.overflow = 'hidden';
+}
     </script>
 </html>
