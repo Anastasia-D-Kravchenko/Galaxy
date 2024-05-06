@@ -221,6 +221,8 @@ body {
   }
 }
 .button-86 {
+  font-family: "Poppins", sans-serif !important;
+    font-weight: 800;
     all: unset;
       width: 51px;
       height: 30px;
@@ -228,7 +230,7 @@ body {
       background: transparent;
       border: none;
       position: absolute;
-      color: #fbfbfb;
+      color: #262a3b;
       cursor: pointer;
       z-index: 1;
       padding: 10px 20px;
@@ -244,6 +246,7 @@ body {
       margin: 1rem;
       top: 0;
     left: 0;
+    text-transform: uppercase;
   }
   
   .button-86::after,
@@ -260,7 +263,7 @@ body {
     transform: translate(0%, 0%);
     width: 100%;
     height: 100%;
-    background: #fb6211;
+    background: #ffffff;
     border-radius: 10px;
   }
   
@@ -268,7 +271,7 @@ body {
     transform: translate(10px, 10px);
     width: 35px;
     height: 35px;
-    background: #ffffff6b;
+    background: #262a3b7a;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 50px;
