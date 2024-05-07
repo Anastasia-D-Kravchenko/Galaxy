@@ -24,7 +24,7 @@
         margin-left: -10px;
     }
     .new_marg{
-        margin-left: var(--zoom, 1);
+    margin-left: var(--zoom, 1);
     position: absolute;
     margin-top: -50px;
     display: flex;
@@ -66,6 +66,8 @@
         console.log(screenZoom_cal);
         if (screenWidth == 1280) {
             document.body.style.zoom = screenZoom;
+        }else if(screenWidth < 600){
+            document.documentElement.style.setProperty('--zoom', 0);
         } else {
             document.body.style.zoom = screenZoom_cal;
         }
