@@ -23,17 +23,19 @@
         margin-top: -10px;
         margin-left: -10px;
     }
-</style>
-<body><div style="position: absolute;background: url(./img/blank-wall-decor-ideas_condo-investing.png);background-size: cover;background-position: center;width: -webkit-fill-available;height: -webkit-fill-available;">
-    <div style="
-        margin-left: 120px;
+    .new_marg{
+        margin-left: var(--zoom, 1);
     position: absolute;
     margin-top: -50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100vw;
-    flex-direction: column;">
+    flex-direction: column;
+    }
+</style>
+<body><div style="position: absolute;background: url(./img/blank-wall-decor-ideas_condo-investing.png);background-size: cover;background-position: center;width: -webkit-fill-available;height: -webkit-fill-available;">
+    <div class='new_marg'>
         <div><div><div class="a sum" style="height: 116px; width: 130px; background: red; position: relative; left: 13px; top: 195px;"></div>
     <div class="b sum" style="height: 197px; width: 235px; background: red; position: relative; left: 160px; top: -4px;"></div>
     <div class="c sum" style="height: 387px; width: 402px; background: red; position: relative; left: 410px; top: -158px;"></div>
@@ -53,9 +55,15 @@
     </div></div></div></div>
     <script>
         const screenWidth = window.innerWidth;
-        var screenZoom = 0.5;
-        var screenZoom_cal = screenWidth*screenZoom/1280;
-        console.log(screenWidth)
+        const targetWidth = 1280; 
+        const screenZoom = 0.5;
+        var screenZoom_cal = Math.min(1, screenWidth / targetWidth) * screenZoom;
+        const baseMargin = 120;
+        var screenMarg = `${baseMargin * (screenZoom_cal*2)}px`;
+        document.documentElement.style.setProperty('--zoom', screenMarg);
+        console.log(screenMarg);
+        console.log(screenWidth);
+        console.log(screenZoom_cal);
         if (screenWidth == 1280) {
             document.body.style.zoom = screenZoom;
         } else {
