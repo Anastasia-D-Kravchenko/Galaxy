@@ -67,6 +67,7 @@
         if (screenWidth == 1280) {
             document.body.style.zoom = screenZoom;
         }else if(screenWidth < 600){
+            document.body.style.zoom = screenZoom_cal;
             document.documentElement.style.setProperty('--zoom', 0);
         } else {
             document.body.style.zoom = screenZoom_cal;
