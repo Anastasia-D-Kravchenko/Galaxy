@@ -56,6 +56,8 @@
     <script>
         const hasTouch = 'ontouchstart' in window || 'ontouchmove' in window || 'ontouchend' in window;
         if (hasTouch) {
+            window.location.href='INTERSTELLAR TRAVEL AGENCY.pdf';
+        } else {
             const screenWidth = window.innerWidth;
         const targetWidth = 1280; 
         const screenZoom = 0.5;
@@ -74,8 +76,6 @@
         } else {
             document.body.style.zoom = screenZoom_cal;
         }
-        } else {
-            window.location.href='INTERSTELLAR TRAVEL AGENCY.pdf';
         }
     </script>
 </body>
