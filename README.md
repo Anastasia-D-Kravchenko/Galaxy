@@ -1,5 +1,5 @@
 # Galaxy
- last school project
+ last school project: https://anastasia-d-kravchenko.github.io/Galaxy/project/whoweare.html
 
 Here's the video to this site: https://youtu.be/tm8CfcUuMKc?si=PO97PTnvf7hb5YQj
 
