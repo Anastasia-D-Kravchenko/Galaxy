@@ -54,7 +54,11 @@
     <div class="p sum" onclick="window.location.href = 'https://www.nationalgeographic.com/science/article/origins-of-the-universe'" style="height: 110px; width: 135px; background: url(./img/png-clipart-desktop-display-resolution-desktop-environment-space-atmosphere-computer.png); background-size: 100% 100%; position: relative; left: 1434px; top: -2137px;"></div>
     </div></div></div></div>
     <script>
-        const screenWidth = window.innerWidth;
+        const hasTouch = 'ontouchstart' in window || 'ontouchmove' in window || 'ontouchend' in window;
+        if (hasTouch) {
+            window.location.href='INTERSTELLAR TRAVEL AGENCY.pdf';
+        } else {
+            const screenWidth = window.innerWidth;
         const targetWidth = 1280; 
         const screenZoom = 0.5;
         var screenZoom_cal = Math.min(1, screenWidth / targetWidth) * screenZoom;
@@ -66,8 +70,12 @@
         console.log(screenZoom_cal);
         if (screenWidth == 1280) {
             document.body.style.zoom = screenZoom;
+        }else if(screenWidth < 600){
+            document.body.style.zoom = screenZoom_cal;
+            document.documentElement.style.setProperty('--zoom', 0);
         } else {
             document.body.style.zoom = screenZoom_cal;
+        }
         }
     </script>
 </body>
